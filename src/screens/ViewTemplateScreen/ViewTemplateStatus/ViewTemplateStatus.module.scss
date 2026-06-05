@@ -1,0 +1,34 @@
+.status {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 1rem;
+  background: var(--color-page);
+  color: var(--color-muted);
+}
+
+.panel {
+  display: grid;
+  gap: 0.4rem;
+  max-width: 24rem;
+  text-align: center;
+
+  p,
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    color: var(--color-subtle);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    color: var(--color-text);
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    line-height: 1.1;
+  }
+}

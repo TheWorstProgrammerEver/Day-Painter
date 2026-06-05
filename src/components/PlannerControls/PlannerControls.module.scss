@@ -1,0 +1,34 @@
+.controls {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  border: 0;
+  padding: 0;
+}
+
+.legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  select {
+    width: 100%;
+    border: 1px solid var(--color-control-border);
+    border-radius: 8px;
+    padding: 0.7rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,121 @@
+@use '../../styles/accessibility' as *;
+
+.timeline {
+  --timeline-base-height: 1800px;
+  --timeline-min-chunk-height: 0px;
+  --timeline-min-height: 0px;
+  position: relative;
+  max-width: 900px;
+  height: max(var(--timeline-base-height), var(--timeline-min-height));
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-timeline);
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+.chunk {
+  min-height: var(--timeline-min-chunk-height);
+  border-bottom: 1px solid var(--color-grid-line);
+  pointer-events: none;
+
+  &::before {
+    content: attr(data-label);
+    display: inline-block;
+    width: 5.5rem;
+    padding: 0.25rem 0.45rem;
+    color: var(--color-subtle);
+    font-size: 0.72rem;
+  }
+}
+
+.block {
+  position: absolute;
+  left: 5.5rem;
+  right: 0.35rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: 1.75rem;
+  border: 1px solid var(--color-block-border);
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  color: var(--color-block-text);
+  pointer-events: auto;
+
+  span {
+    font-size: 0.75rem;
+  }
+}
+
+.blockAction {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  border: 1px solid var(--color-block-border);
+  border-radius: 6px;
+  padding: 0.25rem 0.4rem;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--color-block-text);
+  cursor: pointer;
+
+  span {
+    @include ScreenReaderOnly;
+  }
+}
+
+.block:hover .blockAction,
+.blockAction:focus-visible {
+  opacity: 1;
+}
+
+.timelineSummary,
+.currentTimePrefix {
+  @include ScreenReaderOnly;
+}
+
+.now {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  border-top: 2px solid var(--color-now);
+  pointer-events: none;
+
+  time {
+    position: absolute;
+    right: 0.35rem;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    padding: 0.2rem 0.45rem;
+    background: var(--color-now);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 760px) {
+  .timeline {
+    --timeline-base-height: 1500px;
+  }
+
+  .block {
+    left: 4.7rem;
+  }
+
+  .chunk::before {
+    width: 4.6rem;
+  }
+}

@@ -1,0 +1,13 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+@media (max-width: 760px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+}

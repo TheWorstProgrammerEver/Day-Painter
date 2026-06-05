@@ -1,0 +1,32 @@
+{
+  "name": "day-painter",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "install-local-https-certs": "bash scripts/install-local-https-certs.sh",
+    "preview": "vite preview",
+    "lint": "tsc -b",
+    "test": "vitest run",
+    "test:visual": "playwright test",
+    "uninstall-local-https-certs": "bash scripts/uninstall-local-https-certs.sh"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "latest",
+    "sass": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "^4.1.7"
+  }
+}

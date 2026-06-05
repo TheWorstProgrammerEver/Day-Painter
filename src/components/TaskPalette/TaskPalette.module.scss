@@ -1,0 +1,93 @@
+.taskList {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emptyState {
+  margin: 0;
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 0.85rem;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.task,
+.selectedTask {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+
+  strong,
+  small {
+    display: block;
+  }
+
+  small {
+    margin-top: 0.2rem;
+    color: var(--color-muted);
+    line-height: 1.35;
+  }
+}
+
+.task:has(.radio:focus-visible),
+.selectedTask:has(.radio:focus-visible) {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+
+  small {
+    margin-top: 0;
+    white-space: nowrap;
+  }
+}
+
+.selectedTask {
+  border-color: var(--color-selected);
+  box-shadow: 0 0 0 2px var(--color-selected) inset;
+}
+
+.swatch,
+.clearSwatch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  margin-top: 0.1rem;
+}
+
+.clearSwatch {
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(135deg, transparent 42%, var(--color-now) 42%, var(--color-now) 58%, transparent 58%),
+    var(--color-surface);
+}

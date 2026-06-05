@@ -1,0 +1,37 @@
+.section {
+  min-width: 0;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  max-width: 900px;
+  margin: 0 auto 1rem;
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  p {
+    color: var(--color-muted);
+  }
+}
+
+.activeTask {
+  flex: 0 0 auto;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .header {
+    display: grid;
+  }
+
+  .activeTask {
+    justify-self: start;
+  }
+}
