@@ -2,6 +2,12 @@
 
 Day Painter is the reference project for Ryan's small React TypeScript MVP style.
 
+Reference implementation:
+
+```text
+https://github.com/TheWorstProgrammerEver/Day-Painter
+```
+
 The durable Codex skill lives outside this repo:
 
 ```text
